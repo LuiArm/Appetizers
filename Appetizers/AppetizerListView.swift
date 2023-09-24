@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct AppetizerListView: View {
+//    @StateObject var viewModel
+    
+    
     var body: some View {
         NavigationStack{
-            Text("List View")
-                .navigationTitle("🌮 Appetizers")
+            List(MockData.appetizers, id: \.id){ appetizer in
+                HStack{
+                    Image("asian-flank-steak")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 120,height: 90)
+                        .clipShape(Capsule())
+        
+                    VStack{
+                        Text(appetizer.name)
+                        Text("$\(appetizer.price)")
+                        
+                    }
+                }
+                
+            }
+            .navigationTitle("🌮 Appetizers")
         }
     }
 }
