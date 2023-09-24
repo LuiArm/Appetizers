@@ -14,19 +14,7 @@ struct AppetizerListView: View {
     var body: some View {
         NavigationStack{
             List(MockData.appetizers, id: \.id){ appetizer in
-                HStack{
-                    Image("asian-flank-steak")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 120,height: 90)
-                        .clipShape(Capsule())
-        
-                    VStack{
-                        Text(appetizer.name)
-                        Text("$\(appetizer.price)")
-                        
-                    }
-                }
+                AppetizerListCell(appetizer: appetizer)
                 
             }
             .navigationTitle("🌮 Appetizers")
