@@ -13,11 +13,13 @@ final class NetworkManager {
     static let shares = NetworkManager()
     
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
-    static let appetizerURL = baseURL + "appetizers"
+    // endpoint of "appetizers"
+    private let appetizerURL = baseURL + "appetizers"
     
     private init() {}
-    
-    func getAppetizers(completed: @escaping (Result<[Appetizer], Error>) -> Void) {
+    //Result- A value that represents either a success or a failure, including an associated value in each case
+    //@escaping- a reference type which lives in memory that needs to outlive the life of the function
+    func getAppetizers(completed: @escaping (Result<[Appetizer], APError>) -> Void) {
          
     }
 }
