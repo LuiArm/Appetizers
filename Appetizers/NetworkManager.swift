@@ -5,12 +5,16 @@
 //  Created by luis armendariz on 9/24/23.
 //
 
-import Foundation
+import UIKit
 
 //SINGLETON- initializes class instance single time with static property and share class instance globally.
 final class NetworkManager {
     
     static let shared = NetworkManager()
+    
+    //Put images from network call in cache to avoid downloading everytime user scrolls
+    private let cache = NSCache<NSString, UIImage>()
+                            //  Identifier, Image (Key : Value pair)
     
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
     // endpoint of "appetizers"
@@ -50,6 +54,42 @@ final class NetworkManager {
                 completed(.failure(.invalidData))
             }
         }
+        task.resume()
+    }
+    
+    
+    //Network call to get images
+    // UIImage is optional because we may not get an image back so we will use a placeholder image in that case
+    func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void ) {
+        
+        // URL address for each image is unique
+        let cacheKey = NSString(string: urlString)
+        
+        //checking if image is in the cache, if so pull image and return
+        if let image = cache.object(forKey: cacheKey){
+            completed(image)
+            return
+        }
+        
+        //if image is not in cache proceed to download from url
+        guard let url = URL(string: urlString) else {
+            completed(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
+            
+            //if good data is returned, try to initialize image from that data
+            guard let data = data, let image = UIImage(data: data) else {
+                completed(nil)
+                return
+            }
+            
+            //Placing image in the cache
+            self.cache.setObject(image, forKey: cacheKey)
+            completed(image)
+        }
+        
         task.resume()
     }
 }

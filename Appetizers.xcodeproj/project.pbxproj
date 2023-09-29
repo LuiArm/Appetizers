@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F61B48FB2AC6910300163D66 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B48FA2AC6910300163D66 /* RemoteImage.swift */; };
 		F61DFF972ABE1284005AFBF4 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFF962ABE1284005AFBF4 /* AppetizersApp.swift */; };
 		F61DFF992ABE1284005AFBF4 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFF982ABE1284005AFBF4 /* AppetizerTabView.swift */; };
 		F61DFF9B2ABE1287005AFBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61DFF9A2ABE1287005AFBF4 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F61B48FA2AC6910300163D66 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		F61DFF932ABE1284005AFBF4 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61DFF962ABE1284005AFBF4 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
 		F61DFF982ABE1284005AFBF4 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				F63B9C5A2AC2203F00F7197A /* APError.swift */,
 				F63741272AC4E85800072236 /* AppetizerListViewModel.swift */,
 				F63741292AC4F1A300072236 /* Alert.swift */,
+				F61B48FA2AC6910300163D66 /* RemoteImage.swift */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				F63B9C552ABFBFFC00F7197A /* Appetizer.swift in Sources */,
 				F63B9C5B2AC2203F00F7197A /* APError.swift in Sources */,
 				F63B9C572AC0ECB500F7197A /* AppetizerListCell.swift in Sources */,
+				F61B48FB2AC6910300163D66 /* RemoteImage.swift in Sources */,
 				F63741282AC4E85800072236 /* AppetizerListViewModel.swift in Sources */,
 				F61DFFA72ABE32FA005AFBF4 /* AccountView.swift in Sources */,
 				F61DFF992ABE1284005AFBF4 /* AppetizerTabView.swift in Sources */,
