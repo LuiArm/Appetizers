@@ -8,43 +8,41 @@
 import SwiftUI
 
 struct AccountView: View {
+    @StateObject var vm = AccountViewModel()
     
-    //Give default value to not have to iniate with values
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var birthdate = Date()
-    @State private var extraNapkins = false
-    @State private var extraSauce = false
+  
     
     
     var body: some View {
         NavigationStack{
             Form {
                 Section(header: Text("Personal Info")){
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    TextField("Email", text: $email)
+                    TextField("First Name", text: $vm.firstName)
+                    TextField("Last Name", text: $vm.lastName)
+                    TextField("Email", text: $vm.email)
                         .keyboardType(.emailAddress)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
-                    DatePicker("Birthdate", selection: $birthdate, displayedComponents: .date)
+                    DatePicker("Birthdate", selection: $vm.birthdate, displayedComponents: .date)
                     
                     Button{
-                       print("saved")
+                        vm.saveChanges()
                     }label: {
                         Text("Save Changes")
                     }
                 }
                 
                 Section(header: Text("Requests")) {
-                    Toggle("Extra Napkins", isOn: $extraNapkins)
-                    Toggle("Extra Sauce", isOn: $extraSauce)
+                    Toggle("Extra Napkins", isOn: $vm.extraNapkins)
+                    Toggle("Extra Sauce", isOn: $vm.extraSauce)
                 }
                 .toggleStyle(SwitchToggleStyle(tint: .brandPrimary))
                
             }
             .navigationTitle("🧾 Accounts")
+        }
+        .alert(item: $vm.alertItem){ alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
         }
     }
 }
