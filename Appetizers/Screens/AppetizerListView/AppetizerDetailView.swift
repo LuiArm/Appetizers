@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AppetizerDetailView: View {
+    
+    // To use this property wrapper have to make sure there is an 'order' object in the environment
+    @EnvironmentObject var order: Order
+    
     let appetizer: Appetizer
     @Binding var isShowingDetail: Bool
     
@@ -41,7 +45,8 @@ struct AppetizerDetailView: View {
             Spacer()
             
             Button{
-                print("tapped")
+                order.items.append(appetizer)
+                isShowingDetail = false
             }label: {
                 APButton(title: "$\(appetizer.price, specifier: "%.2f") - Add to Order")
             }

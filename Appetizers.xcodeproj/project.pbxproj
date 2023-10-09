@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6092CE62AD381F20040B016 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6092CE52AD381F20040B016 /* EmptyState.swift */; };
+		F6092CE82AD385E00040B016 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6092CE72AD385E00040B016 /* Order.swift */; };
 		F61B48FB2AC6910300163D66 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B48FA2AC6910300163D66 /* RemoteImage.swift */; };
 		F61DFF972ABE1284005AFBF4 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFF962ABE1284005AFBF4 /* AppetizersApp.swift */; };
 		F61DFF992ABE1284005AFBF4 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFF982ABE1284005AFBF4 /* AppetizerTabView.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F6092CE52AD381F20040B016 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		F6092CE72AD385E00040B016 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F61B48FA2AC6910300163D66 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		F61DFF932ABE1284005AFBF4 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61DFF962ABE1284005AFBF4 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
@@ -64,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6092CE42AD381C70040B016 /* Empty States */ = {
+			isa = PBXGroup;
+			children = (
+				F6092CE52AD381F20040B016 /* EmptyState.swift */,
+			);
+			path = "Empty States";
+			sourceTree = "<group>";
+		};
 		F61DFF8A2ABE1284005AFBF4 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +192,7 @@
 			children = (
 				F63B9C542ABFBFFC00F7197A /* Appetizer.swift */,
 				F6374E972ACF3F0700184FD3 /* User.swift */,
+				F6092CE72AD385E00040B016 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 		F68895F42ACBCD62000AB43B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6092CE42AD381C70040B016 /* Empty States */,
 				F6A95ACF2ACE5088004276E6 /* Buttons */,
 				F68895F62ACBCD7A000AB43B /* Cells */,
 				F68895F52ACBCD69000AB43B /* Image */,
@@ -291,6 +305,7 @@
 			files = (
 				F63B9C552ABFBFFC00F7197A /* Appetizer.swift in Sources */,
 				F63B9C5B2AC2203F00F7197A /* APError.swift in Sources */,
+				F6092CE82AD385E00040B016 /* Order.swift in Sources */,
 				F63B9C572AC0ECB500F7197A /* AppetizerListCell.swift in Sources */,
 				F6A95AD92ACE792C004276E6 /* String+Ext.swift in Sources */,
 				F61B48FB2AC6910300163D66 /* RemoteImage.swift in Sources */,
@@ -303,6 +318,7 @@
 				F6A95AD72ACE7754004276E6 /* AccountViewModel.swift in Sources */,
 				F6A95AD32ACE50F6004276E6 /* APButton.swift in Sources */,
 				F637412A2AC4F1A300072236 /* Alert.swift in Sources */,
+				F6092CE62AD381F20040B016 /* EmptyState.swift in Sources */,
 				F6374E982ACF3F0700184FD3 /* User.swift in Sources */,
 				F61DFFA52ABE329A005AFBF4 /* AppetizerListView.swift in Sources */,
 				F61DFFA92ABE3315005AFBF4 /* OrderView.swift in Sources */,
