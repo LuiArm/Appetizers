@@ -13,17 +13,17 @@ struct AppetizerTabView: View {
             AppetizerListView()
                 .tabItem {
                     Image(systemName: "house")
-                    Text("Casa")
+                    Text("Home")
                 }
             AccountView()
                 .tabItem {
                     Image(systemName: "person")
-                    Text("Cuenta")
+                    Text("Account")
                 }
             OrderView()
                 .tabItem {
                     Image(systemName: "bag")
-                    Text("Orden")
+                    Text("Order")
                 }
             
         }
