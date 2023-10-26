@@ -17,6 +17,7 @@ struct AppetizerListView: View {
             NavigationStack{
                 List(viewModel.appetizers, id: \.id){ appetizer in
                     AppetizerListCell(appetizer: appetizer)
+                        .listRowSeparator(.hidden)
                         .onTapGesture {
                             viewModel.selectedAppetizer = appetizer
                             viewModel.isShowingDetail = true
@@ -36,7 +37,6 @@ struct AppetizerListView: View {
             
             if viewModel.isLoading {
                 ProgressView()
-                    
             }
         }
         .alert(item: $viewModel.alertItem){alertItem in
