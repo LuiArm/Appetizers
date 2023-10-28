@@ -65,14 +65,12 @@ final class NetworkManager {
         
         let (data, response) = try await URLSession.shared.data(from: url)
         
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
-          
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url))
             
             
             do {
                 let decoder = JSONDecoder()
                 return try decoder.decode(AppetizerResponse.self, from: data).request
-                return decodedResponse.request
             }catch {
                 throw APError.invalidData
             }

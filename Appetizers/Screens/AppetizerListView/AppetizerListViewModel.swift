@@ -15,31 +15,46 @@ final class AppetizerListViewModel: ObservableObject {
     @Published var isShowingDetail = false
     @Published var selectedAppetizer: Appetizer?
     
+//    func getAppetizers() {
+//        isLoading = true
+//        //On background thread but need to be on main so use Dispatch que main
+//        NetworkManager.shared.getAppetizers { [self] result in
+//            DispatchQueue.main.async {
+//                isLoading = false
+//                switch result {
+//                case .success(let appetizers):
+//                    self.appetizers = appetizers // still need self here to differ from the same named appetizers
+//                    
+//                case .failure(let error): //error passed in from network manager
+//                    switch error {
+//                    case .invalidResponse:
+//                        alertItem = AlertContext.invalidResponse
+//                        
+//                    case .invalidURL:
+//                        alertItem = AlertContext.invalidURL
+//                        
+//                    case .invalidData:
+//                        alertItem = AlertContext.invalidData
+//                        
+//                    case .unableToComplete:
+//                        alertItem = AlertContext.unableToComplete
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    
     func getAppetizers() {
         isLoading = true
         //On background thread but need to be on main so use Dispatch que main
-        NetworkManager.shared.getAppetizers { result in
-            DispatchQueue.main.async { [self] in
+        Task {
+            do {
+                appetizers = try await NetworkManager.shared.getAppetizers()
                 isLoading = false
-                switch result {
-                case .success(let appetizers):
-                    self.appetizers = appetizers // still need self here to differ from the same named appetizers
-                    
-                case .failure(let error): //error passed in from network manager
-                    switch error {
-                    case .invalidResponse:
-                        alertItem = AlertContext.invalidResponse
-                        
-                    case .invalidURL:
-                        alertItem = AlertContext.invalidURL
-                        
-                    case .invalidData:
-                        alertItem = AlertContext.invalidData
-                        
-                    case .unableToComplete:
-                        alertItem = AlertContext.unableToComplete
-                    }
-                }
+            }catch {
+                alertItem = AlertContext.invalidResponse
+                isLoading = false
             }
         }
     }
