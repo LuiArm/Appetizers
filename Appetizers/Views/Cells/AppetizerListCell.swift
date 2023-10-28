@@ -12,10 +12,24 @@ struct AppetizerListCell: View {
     
     var body: some View {
         HStack{
-            AppetizerRemoteImage(urlString: appetizer.imageURL)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 120,height: 90)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .continuous))
+//            AppetizerRemoteImage(urlString: appetizer.imageURL)
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 120,height: 90)
+//                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10), style: .continuous))
+            
+            AsyncImage(url: URL(string: appetizer.imageURL)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 20), style: .continuous))
+            } placeholder: {
+                Image("food-placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 120)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 20), style: .continuous))
+            }
 
             VStack(alignment: .leading,spacing: 8){
                 Text(appetizer.name)
