@@ -17,6 +17,8 @@
 		F61DFFA52ABE329A005AFBF4 /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFFA42ABE329A005AFBF4 /* AppetizerListView.swift */; };
 		F61DFFA72ABE32FA005AFBF4 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFFA62ABE32FA005AFBF4 /* AccountView.swift */; };
 		F61DFFA92ABE3315005AFBF4 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61DFFA82ABE3315005AFBF4 /* OrderView.swift */; };
+		F6223F672AEEEE8A009EF12B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6223F662AEEEE8A009EF12B /* LoadingView.swift */; };
+		F6223F692AEEF09E009EF12B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6223F682AEEF09E009EF12B /* Date+Ext.swift */; };
 		F63741282AC4E85800072236 /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63741272AC4E85800072236 /* AppetizerListViewModel.swift */; };
 		F637412A2AC4F1A300072236 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63741292AC4F1A300072236 /* Alert.swift */; };
 		F6374E982ACF3F0700184FD3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6374E972ACF3F0700184FD3 /* User.swift */; };
@@ -43,6 +45,8 @@
 		F61DFFA42ABE329A005AFBF4 /* AppetizerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListView.swift; sourceTree = "<group>"; };
 		F61DFFA62ABE32FA005AFBF4 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		F61DFFA82ABE3315005AFBF4 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		F6223F662AEEEE8A009EF12B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F6223F682AEEF09E009EF12B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		F63741272AC4E85800072236 /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 		F63741292AC4F1A300072236 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F6374E972ACF3F0700184FD3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -115,6 +119,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F6223F652AEEEE6F009EF12B /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				F6223F662AEEEE8A009EF12B /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 		F68895EB2ACBCBE3000AB43B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				F6A95AD82ACE792B004276E6 /* String+Ext.swift */,
+				F6223F682AEEF09E009EF12B /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 		F68895F42ACBCD62000AB43B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F6223F652AEEEE6F009EF12B /* LoadingView */,
 				F6092CE42AD381C70040B016 /* Empty States */,
 				F6A95ACF2ACE5088004276E6 /* Buttons */,
 				F68895F62ACBCD7A000AB43B /* Cells */,
@@ -308,6 +322,7 @@
 				F6092CE82AD385E00040B016 /* Order.swift in Sources */,
 				F63B9C572AC0ECB500F7197A /* AppetizerListCell.swift in Sources */,
 				F6A95AD92ACE792C004276E6 /* String+Ext.swift in Sources */,
+				F6223F672AEEEE8A009EF12B /* LoadingView.swift in Sources */,
 				F61B48FB2AC6910300163D66 /* RemoteImage.swift in Sources */,
 				F63741282AC4E85800072236 /* AppetizerListViewModel.swift in Sources */,
 				F61DFFA72ABE32FA005AFBF4 /* AccountView.swift in Sources */,
@@ -319,6 +334,7 @@
 				F6A95AD32ACE50F6004276E6 /* APButton.swift in Sources */,
 				F637412A2AC4F1A300072236 /* Alert.swift in Sources */,
 				F6092CE62AD381F20040B016 /* EmptyState.swift in Sources */,
+				F6223F692AEEF09E009EF12B /* Date+Ext.swift in Sources */,
 				F6374E982ACF3F0700184FD3 /* User.swift in Sources */,
 				F61DFFA52ABE329A005AFBF4 /* AppetizerListView.swift in Sources */,
 				F61DFFA92ABE3315005AFBF4 /* OrderView.swift in Sources */,

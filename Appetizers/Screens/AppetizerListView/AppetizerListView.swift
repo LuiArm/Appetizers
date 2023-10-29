@@ -36,7 +36,7 @@ struct AppetizerListView: View {
             }
             
             if viewModel.isLoading {
-                ProgressView()
+                LoadingView()
             }
         }
         .alert(item: $viewModel.alertItem){alertItem in

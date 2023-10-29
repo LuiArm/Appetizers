@@ -34,11 +34,11 @@ struct AppetizerDetailView: View {
                 
                 HStack(spacing: 40){
                     
-                    NutrionInfo(title: "Calories", value: appetizer.calories)
+                    NutrionInfo(title: "Calories", value: "\(appetizer.calories) cal")
             
-                    NutrionInfo(title: "Carbs", value: appetizer.carbs)
+                    NutrionInfo(title: "Carbs", value: "\(appetizer.carbs) g")
                     
-                    NutrionInfo(title: "Protein", value: appetizer.protein)
+                    NutrionInfo(title: "Protein", value: "\(appetizer.protein) g")
                 }
             }
             
@@ -69,7 +69,7 @@ struct AppetizerDetailView: View {
 
 struct NutrionInfo: View {
     let title: String
-    let value: Int
+    let value: String
     
     var body: some View{
         VStack(spacing: 5){
@@ -77,7 +77,7 @@ struct NutrionInfo: View {
                 .bold()
                 .font(.caption)
             
-            Text("\(value)")
+            Text(value)
                 .foregroundStyle(.secondary)
                 .fontWeight(.semibold)
                 .italic()
